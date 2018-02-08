@@ -1,3 +1,7 @@
 NU FUNKAR DET GUYS!
+<<<<<<< HEAD
 
 FETT NICE / VANESSA
+=======
+rumpgosse
+>>>>>>> c10f0cf0d654a1b353c456aaa4fb9a271d291a57
