@@ -35,6 +35,7 @@
 		<script src="three.js"></script>
 		<script src="OBJLoader.js"></script>
 		<script src="Matrix4.js"></script>
+		<script src="spinner.js"></script>
 
 		<script>
 
@@ -48,6 +49,13 @@
 			var windowHalfY = window.innerHeight / 2;
 			
 			var pi = 3.14159265359;
+
+			//for spinner
+			var oldPosition;
+			var force = 10;
+			var ellapsedTime = 0;
+			var time;
+			var lastTime;
 			
 			// scene
 
@@ -141,6 +149,9 @@
 
 				window.addEventListener( 'resize', onWindowResize, false );
 
+				// skapar fidgetspinnerinstans 
+				spinner = new Spinner(0.026, 0.00005, 0.0000024);
+
 			}
 
 			function onWindowResize() {
@@ -172,13 +183,22 @@
 			}
 
 			function render() {
-			
-			
+				
+				time = Date.now();
+				ellapsedTime = Date.now() - lastTime;
+				lastTime = time;
+
 				camera.lookAt( scene.position );
 
+				oldPosition = spinner.angularPosition;
+
+				if(ellapsedTime > 200) //200 millisec = 0.2 sec
+					force = 0; //after some time, stop applying force
+
+				spinner.spin(force, 0.1); 
+				//spinner.spin(10, 0.1); 
 				
-				earthSpin.rotation.y += 0.01;
-				
+				earthSpin.rotation.z += spinner.angularPosition - oldPosition;
 				
 				renderer.render( scene, camera );
 
