@@ -7,6 +7,7 @@ class Spinner {
 		this.angularPosition = 0;
 		this.angularVelocity = 0;
 		this.counter = 0; // counts how many iterations
+		this.texture = 'red.png';
 	}
 
 	spin(force, stepLength) { // Updates angular position with euler

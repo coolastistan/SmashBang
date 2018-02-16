@@ -35,7 +35,6 @@
 			var startTime;
 			
 			// scene
-
 			scene = new THREE.Scene();
 			var sceneRoot = new THREE.Group();
 			var fidgetSpin = new THREE.Group();
@@ -46,6 +45,9 @@
 			function init() {
 
 				startTime = Date.now();
+
+				// skapar fidgetspinnerinstans 
+				spinner = new Spinner(0.026, 0.00005, 0.0000024);
 
 				container = document.createElement( 'div' );
 				document.body.appendChild( container );
@@ -69,7 +71,7 @@
 				};
 
 				var textureLoader = new THREE.TextureLoader( manager );
-				var texture = textureLoader.load( 'red.png' );
+				var texture = textureLoader.load( spinner.texture );
 
 				// model
 				var onProgress = function ( xhr ) {
@@ -115,9 +117,6 @@
 
 				window.addEventListener( 'resize', onWindowResize, false );
 
-				// skapar fidgetspinnerinstans 
-				spinner = new Spinner(0.026, 0.00005, 0.0000024);
-
 			}
 
 			function onWindowResize() {
@@ -159,7 +158,7 @@
 				if(force != 0 && ellapsedTime > 200) //200 millisec = 0.2 sec
 					force = 0; //after some time, stop applying force
 
-				spinner.spin(force, 0.1); 
+				spinner.spin(force, 0.05); 
 				//spinner.spin(10, 0.1); 
 				
 				fidgetSpin.rotation.z += spinner.angularPosition - oldPosition;
