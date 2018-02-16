@@ -47,7 +47,7 @@
 				startTime = Date.now();
 
 				// skapar fidgetspinnerinstans 
-				spinner = new Spinner(0.026, 0.00005, 0.0000024, "red.png");
+				spinner = new Spinner(0.026, 0.00005, 0.0000024, "red.png", "spinner2.obj");
 
 				container = document.createElement( 'div' );
 				document.body.appendChild( container );
@@ -85,7 +85,7 @@
 				};
 
 				var loader = new THREE.OBJLoader( manager );
-				loader.load( 'spinner2.obj', function ( object ) {
+				loader.load( spinner.object , function ( object ) {
 
 					object.traverse( function ( child ) {
 

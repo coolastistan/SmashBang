@@ -1,6 +1,6 @@
 class Spinner {
 
-	constructor(diameter, inertia, friction, texture){
+	constructor(diameter, inertia, friction, texture, object){
 		this.diameter = diameter; 
 		this.friction = friction; 
 		this.inertia = inertia;
@@ -8,6 +8,7 @@ class Spinner {
 		this.angularVelocity = 0;
 		this.counter = 0; // counts how many iterations
 		this.texture = texture;
+		this.object = object;
 	}
 
 	spin(force, stepLength) { // Updates angular position with euler
