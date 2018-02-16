@@ -33,6 +33,10 @@
 			var ellapsedTime = 0;
 			var time;
 			var startTime;
+
+			//the choices of spinners
+			spinnerOne = new Spinner(0.026, 0.00005, 0.0000024, "red.png", "spinner2.obj");
+			spinnerTwo = new Spinner(0.026, 0.00005, 0.0000024, "metal.jpg", "gulbatman.obj");
 			
 			// scene
 			scene = new THREE.Scene();
@@ -47,7 +51,7 @@
 				startTime = Date.now();
 
 				// skapar fidgetspinnerinstans 
-				spinner = new Spinner(0.026, 0.00005, 0.0000024, "red.png", "spinner2.obj");
+				spinner = spinnerOne;
 
 				container = document.createElement( 'div' );
 				document.body.appendChild( container );
