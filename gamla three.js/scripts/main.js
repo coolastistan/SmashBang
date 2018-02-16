@@ -17,8 +17,8 @@
 			var startTime;
 
 			//the choices of spinners
-			spinnerOne = new Spinner(0.026, 0.00005, 0.0000024, "textures/red.png", "spinners/spinner2.obj");
-			spinnerTwo = new Spinner(0.026, 0.00005, 0.0000024, "textures/metal.jpg", "spinners/gulbatman.obj");
+			spinnerOne = new Spinner(0.026, 0.00005, 0.0000024, "textures/red.png", "spinner2.obj");
+			spinnerTwo = new Spinner(0.026, 0.00005, 0.0000024, "textures/metal.jpg", "gulbatman.obj");
 			
 			// scene
 			scene = new THREE.Scene();
