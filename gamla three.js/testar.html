@@ -38,11 +38,10 @@
 
 			scene = new THREE.Scene();
 			var sceneRoot = new THREE.Group();
-			var earthSpin = new THREE.Group();
+			var fidgetSpin = new THREE.Group();
 
 			init();
 			animate();
-
 
 			function init() {
 
@@ -110,8 +109,8 @@
 					// lägger till rotation och objekt till scengrafen 
 					
 					scene.add( sceneRoot );
-					sceneRoot.add( earthSpin );
-					earthSpin.add( object );
+					sceneRoot.add( fidgetSpin );
+					fidgetSpin.add( object );
 
 				}, onProgress, onError );
 
@@ -175,7 +174,7 @@
 				spinner.spin(force, 0.1); 
 				//spinner.spin(10, 0.1); 
 				
-				earthSpin.rotation.z += spinner.angularPosition - oldPosition;
+				fidgetSpin.rotation.z += spinner.angularPosition - oldPosition;
 				
 				renderer.render( scene, camera );
 
