@@ -20,6 +20,9 @@
 			spinnerOne = new Spinner(0.026, 0.00005, 0.0000024, "textures/red.png", "spinners/spinner2.obj");
 			spinnerTwo = new Spinner(0.026, 0.00005, 0.0000024, "textures/metal.jpg", "spinners/gulbatman.obj");
 			spinnerThree = new Spinner(0.026, 0.00005, 0.0000024, "textures/marble.jpg", "spinners/tredjespinner.obj");
+
+			//initial spinner
+			var spinner = spinnerOne;
 			
 			// scene
 			scene = new THREE.Scene();
@@ -31,10 +34,7 @@
 
 			function init() {
 
-				startTime = Date.now();
-
-				// skapar fidgetspinnerinstans 
-				spinner = spinnerThree;
+				startTime = Date.now()
 
 				container = document.createElement( 'div' );
 				document.body.appendChild( container );
