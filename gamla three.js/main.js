@@ -7,7 +7,7 @@
 			var windowHalfX = window.innerWidth / 2;
 			var windowHalfY = window.innerHeight / 2;
 			
-			var pi = 3.14159265359;
+			var pi = 3.1415926535;
 
 			//for spinner
 			var oldPosition;
@@ -36,8 +36,7 @@
 
 				startTime = Date.now()
 
-				container = document.createElement( 'div' );
-				document.body.appendChild( container );
+				container = document.getElementById( 'opengl' );
 
 				// Sätter upp kameran 
 				camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 2000 );
@@ -94,10 +93,11 @@
 					fidgetSpin.add( object );
 
 				}, onProgress, onError );
-
+				
 				renderer = new THREE.WebGLRenderer();
+				renderer.setClearColor( 0x000000 );
 				renderer.setPixelRatio( window.devicePixelRatio );
-				renderer.setSize( window.innerWidth, window.innerHeight );
+				renderer.setSize( window.innerWidth*0.9, window.innerHeight*0.9 );
 				container.appendChild( renderer.domElement );
 
 				document.addEventListener( 'mousemove', onDocumentMouseMove, false );
@@ -114,7 +114,7 @@
 				camera.aspect = window.innerWidth / window.innerHeight;
 				camera.updateProjectionMatrix();
 
-				renderer.setSize( window.innerWidth, window.innerHeight );
+				renderer.setSize( window.innerWidth*0.9, window.innerHeight*0.9 );
 
 			}
 
